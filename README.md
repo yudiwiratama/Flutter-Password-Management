@@ -1,5 +1,29 @@
 # Password Vault - Flutter Password Management App
 
+<details><summary>Preview APP</summary>
+
+
+<details><summary>Login Page /  Registration </summary>
+![image](/uploads/ee9242f1bdd42873fe92a4e58f88659e/image.png)
+</details>
+
+<details><summary>Backup & Restore</summary>
+![image](/uploads/2595a647b32b7ebc3e91d4cabf501ca8/image.png)
+</details>
+
+<details><summary>Main Home</summary>
+![image](/uploads/bba7283ee2169c5acf73235047679f84/image.png)
+</details>
+
+<details><summary>Data Form</summary>
+![image](/uploads/764718d37340367596990ca7acb44623/image.png)
+</details>
+
+</details>
+
+
+
+
 ## Struktur Project
 
 ```
