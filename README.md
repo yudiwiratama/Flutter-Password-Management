@@ -1,20 +1,5 @@
 # Password Vault - Flutter Password Management App
 
-Aplikasi manajemen password berbasis Flutter menggunakan SQFLite untuk penyimpanan data lokal.
-
-## Fitur
-
-- ✅ **CRUD Lengkap**: Create, Read, Update, Delete password
-- 🔍 **Pencarian**: Cari password berdasarkan judul, username, atau website
-- 🔒 **Keamanan**: Password disembunyikan secara default + proteksi PIN
-- 📋 **Copy to Clipboard**: Salin password, username, dan data lainnya dengan mudah
-- 🎲 **Generate Password**: Generate password acak secara otomatis
-- 🛡️ **Lock Seketika**: Tombol "Kunci Sekarang" untuk re-lock manual
-- 🩹 **Forgot PIN**: Reset PIN (mengosongkan data) saat lupa PIN
-- 🔐 **Enkripsi Data**: Password, username, website, dan catatan terenkripsi AES‑GCM (kunci dari PIN via PBKDF2)
-- 📦 **Backup & Restore (File)**: Ekspor/Impor file JSON terenkripsi + hash & salt PIN
-- 💾 **Penyimpanan Lokal**: Data disimpan menggunakan SQFLite database
-
 ## Struktur Project
 
 ```
@@ -88,49 +73,6 @@ lib/
 - `share_plus`: ^12.0.1 - Share file (Android/iOS)
 - `path_provider`: ^2.1.4 - Direktori sementara (share/export)
 
-## Penggunaan
-
-### Menambah Password Baru
-1. Klik tombol "Tambah Password" di pojok kanan bawah
-2. Isi form dengan data yang diperlukan (Judul, Username, Password)
-3. Opsional: Isi Website dan Catatan
-4. Klik "Simpan Password"
-
-### Melihat Daftar Password
-- Semua password ditampilkan di halaman utama
-- Gunakan search bar untuk mencari password tertentu
-- Klik pada card password untuk melihat detail
-
-### Mengedit Password
-1. Buka detail password
-2. Klik icon edit di AppBar
-3. Atau gunakan menu popup (3 titik) di card password
-4. Edit data yang diperlukan
-5. Klik "Perbarui Password"
-
-### Menghapus Password
-1. Buka detail password atau gunakan menu popup
-2. Klik icon delete
-3. Konfirmasi penghapusan
-
-### Fitur Tambahan
-- **Generate Password**: Klik icon refresh di field password untuk generate password acak
-- **Copy Password**: Klik icon copy untuk menyalin password ke clipboard
-- **Show/Hide Password**: Klik icon mata untuk menampilkan/menyembunyikan password
-- **Proteksi PIN**:
-  - Pertama kali dijalankan, pengguna diminta membuat PIN
-  - Setiap kali aplikasi dibuka kembali atau dikunci manual, layar PIN akan muncul
-  - Tombol `Kunci Sekarang` di AppBar mengembalikan aplikasi ke layar PIN
-- **Forgot PIN**:
-  - Opsi ini akan menghapus semua data tersimpan dan meminta pengguna membuat PIN baru
-  - Pastikan melakukan backup eksternal jika data penting dan PIN berpotensi lupa
-- **Backup & Restore**:
-  - Gunakan tombol `Backup & Restore` di AppBar
-  - Export menghasilkan file JSON terenkripsi (ciphertext + hash & salt PIN) dan disimpan sebagai `vault_backup_*.json`
-  - Android (scoped storage): gunakan “Share Backup” lalu pilih aplikasi (Drive/Files) untuk memilih lokasi (mis. Downloads)
-  - Restore: pilih file backup tersebut dan masukkan PIN yang sama seperti saat backup dibuat
-  - Restore mengganti seluruh data lokal lalu mengunci aplikasi kembali
-  - Simpan file backup di lokasi aman (sebaiknya media terenkripsi)
 
 ## Database Schema
 
@@ -143,18 +85,6 @@ Tabel `passwords` memiliki struktur:
 - `notes`: TEXT (nullable)
 - `created_at`: TEXT NOT NULL
 - `updated_at`: TEXT NOT NULL
-
-## Catatan Keamanan
-
-⚠️ **Peringatan**:
-- Data vault disimpan terenkripsi AES‑GCM; keamanan tetap bergantung pada kekuatan PIN. Gunakan PIN kuat.
-- PIN disimpan sebagai hash SHA‑256 + salt; jika PIN lupa, opsi *Forgot PIN* akan menghapus data untuk mencegah akses ilegal.
-- Pertimbangkan metode recovery (mis. backup terenkripsi ganda, master password/biometrik) bila kehilangan data tidak diinginkan.
-- Backup JSON berisi ciphertext + hash & salt PIN; simpan di media aman dan pertimbangkan enkripsi tambahan saat membagikan.
-
-## Lisensi
-
-Project ini dibuat untuk keperluan pembelajaran dan development.
 
 ## Build & Deploy
 
@@ -206,16 +136,6 @@ Project ini dibuat untuk keperluan pembelajaran dan development.
      flutter run -d chrome --web-port 5000 --web-hostname localhost
      ```
    - Setelah setup `sqflite_common_ffi_web`, pastikan file `sqflite_sw.js` dan `sqlite3.wasm` tersedia di folder `web/`.
-
-### Backup & Restore Berbasis File
-- Export:
-  - Buka `Backup & Restore` → klik `Export ke File`
-  - File akan disimpan sebagai `vault_backup_YYYYMMDDTHHMMSS.json` (lokasi default: Downloads/unduhan atau sesuai sistem)
-  - Anda juga bisa langsung membagikan file via `Share Backup` (Drive, email, dsb.)
-- Restore:
-  - Buka `Backup & Restore` → pilih `Restore dari File`
-  - Pilih file `.json` hasil export dan masukkan PIN yang sama saat backup dibuat
-  - Proses akan mengganti seluruh data lokal dan aplikasi dikunci kembali
 
 
 
