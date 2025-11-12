@@ -4,19 +4,24 @@
 
 
 <details><summary>Login Page /  Registration </summary>
-![image](/uploads/ee9242f1bdd42873fe92a4e58f88659e/image.png)
+<img width="1080" height="2436" alt="image" src="https://github.com/user-attachments/assets/d7f0a6e2-818b-47ac-884b-a968a3994812" />
+
 </details>
 
 <details><summary>Backup & Restore</summary>
-![image](/uploads/2595a647b32b7ebc3e91d4cabf501ca8/image.png)
+<img width="567" height="1280" alt="image" src="https://github.com/user-attachments/assets/aee7544e-f46e-4a84-94b2-f50bb9bfbf60" />
+
 </details>
 
 <details><summary>Main Home</summary>
-![image](/uploads/bba7283ee2169c5acf73235047679f84/image.png)
+<img width="567" height="1280" alt="image" src="https://github.com/user-attachments/assets/80a97839-e604-4f3f-a2d7-7633e83d7ad1" />
+
 </details>
 
 <details><summary>Data Form</summary>
-![image](/uploads/764718d37340367596990ca7acb44623/image.png)
+<img width="567" height="1280" alt="image" src="https://github.com/user-attachments/assets/2adb8bd2-6a58-4c72-a35a-eeb2bc08ffcc" />
+
+
 </details>
 
 </details>
